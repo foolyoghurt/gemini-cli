@@ -35,5 +35,26 @@ export const validateAuthMethod = (authMethod: string): string | null => {
     return null;
   }
 
+  if (authMethod === AuthType.USE_QWEN_OPENROUTER) {
+    if (!process.env.OPENROUTER_API_KEY) {
+      return 'OPENROUTER_API_KEY environment variable not found. Get your key from https://openrouter.ai/keys and add it to your .env file.';
+    }
+    return null;
+  }
+
+  if (authMethod === AuthType.USE_QWEN_DEEPINFRA) {
+    if (!process.env.DEEPINFRA_API_KEY) {
+      return 'DEEPINFRA_API_KEY environment variable not found. Get your key from https://deepinfra.com/dash/api_keys and add it to your .env file.';
+    }
+    return null;
+  }
+
+  if (authMethod === AuthType.USE_QWEN_AIML) {
+    if (!process.env.AIML_API_KEY) {
+      return 'AIML_API_KEY environment variable not found. Get your key from https://aimlapi.com and add it to your .env file.';
+    }
+    return null;
+  }
+
   return 'Invalid auth method selected.';
 };
