@@ -35,6 +35,9 @@ export function AuthDialog({
     },
     { label: 'Gemini API Key', value: AuthType.USE_GEMINI },
     { label: 'Vertex AI', value: AuthType.USE_VERTEX_AI },
+    { label: 'Qwen via OpenRouter', value: AuthType.USE_QWEN_OPENROUTER },
+    { label: 'Qwen via DeepInfra', value: AuthType.USE_QWEN_DEEPINFRA },
+    { label: 'Qwen via AI/ML API', value: AuthType.USE_QWEN_AIML },
   ];
 
   let initialAuthIndex = items.findIndex(
